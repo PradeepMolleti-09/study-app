@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #111;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-hrts-blue;
+  }
+}
+
+.glass-card {
+  @apply bg-white bg-opacity-80 backdrop-blur-md border border-white border-opacity-20 shadow-xl;
+}
+
+.btn-primary {
+  @apply bg-hrts-orange text-white px-6 py-3 rounded-md font-semibold hover:bg-opacity-90 transition-all active:scale-95 flex items-center gap-2;
+}
+
+.btn-outline {
+  @apply border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-hrts-blue transition-all active:scale-95 flex items-center gap-2;
+}
+
+.nav-link {
+  @apply text-hrts-blue font-medium transition-colors relative;
+}
+
+.nav-link:hover {
+  @apply text-hrts-orange;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-hrts-orange transition-all;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
